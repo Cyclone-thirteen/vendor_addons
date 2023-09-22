@@ -14,9 +14,6 @@
 LOCAL_PATH := $(call my-dir)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/addons/overlay/common
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/addons/overlay/common
-
 # Fonts
 PRODUCT_PACKAGES += \
     fonts_customization.xml \
@@ -110,25 +107,6 @@ PRODUCT_PACKAGES += \
     DefaultButSquareOverlay \
     RiceBallsOverlay
 
-# Navbar
-PRODUCT_PACKAGES += \
-    GesturalNavigationOverlayLong \
-    GesturalNavigationOverlayMedium \
-    GesturalNavigationOverlayHidden
-
-# Navbar styles
-PRODUCT_PACKAGES += \
-    NavbarAndroidOverlay \
-	NavbarAsusOverlay \
-	NavbarDoraOverlay \
-    NavbarMotoOverlay \
-    NavbarNexusOverlay \
-    NavbarOldOverlay \
-    NavbarOnePlusOverlay \
-    NavbarOneUiOverlay \
-    NavbarSammyOverlay \
-    NavbarTecnoCamonOverlay
-
 # Signal / WiFi Icons
 PRODUCT_PACKAGES += \
 	AcherusWiFiOverlay \
@@ -173,18 +151,6 @@ PRODUCT_PACKAGES += \
 	PlumpyWiFiOverlay \
 	FaintUISignalOverlay \
 	FaintUIWiFiOverlay
-
-# Themes
-PRODUCT_PACKAGES += \
-    QSOutline \
-    QSTwoToneAccent \
-    QSTwoToneAccentTrans \
-    QSShaded \
-    QSCyberPunk \
-    QSNeumorph \
-    QSReflected \
-    QSSurround \
-    QSThin
 
 # Lockscreen date fonts
 PRODUCT_PACKAGES += \
@@ -233,39 +199,6 @@ PRODUCT_PACKAGES += \
     DateFontSimpleDaySourceOverlay \
     DateFontSonySketchOverlay \
     DateFontVG5000Overlay
-
-# Settings Themes
-PRODUCT_PACKAGES += \
-    AOSPSettingsOverlay \
-    ArcSettingsOverlay \
-    CardSettingsOverlay \
-    MaterialSettingsOverlay \
-    RUISettingsOverlay
-
-# QS UI Style
-PRODUCT_PACKAGES += \
-    A11QSUI \
-    ReevaluateSysUIOverlay
-
-# Volume Styles
-PRODUCT_PACKAGES += \
-    VolumeDoubleLayer \
-    VolumeGradient \
-    VolumeNeumorph \
-    VolumeNeumorphOutline \
-    VolumeOutline \
-    VolumeShadedLayer
-
-# Lineage
-PRODUCT_PACKAGES += \
-    LineageNavigationBarNoHint \
-    LineageBlackTheme
-
-ifeq ($(TARGET_HAS_UDFPS),true)
-PRODUCT_PACKAGES += \
-    UdfpsIcons \
-    UdfpsAnimations
-endif
 
 # Include {Lato,Rubik} fonts
 $(call inherit-product-if-exists, external/google-fonts/lato/fonts.mk)
